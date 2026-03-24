@@ -7,6 +7,9 @@ class TaskExecution(models.Model):
         MANUAL = "manual", "Manual"
         ACCOUNT_SYNC = "account_sync", "Account Sync"
         DNS_SYNC = "dns_sync", "DNS Sync"
+        INSTANCE_SYNC = "instance_sync", "Instance Sync"
+        JUMPSERVER_SYNC = "jumpserver_sync", "JumpServer Sync"
+        BILLING_COLLECT = "billing_collect", "Billing Collect"
 
     class Status(models.TextChoices):
         PENDING = "pending", "Pending"

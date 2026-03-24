@@ -23,7 +23,10 @@ async function handleLogout() {
           <h1 class="mt-2 text-2xl font-semibold">Iteration 1</h1>
         </div>
         <nav class="space-y-2">
+          <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/portal">首页</RouterLink>
           <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/accounts">云账号</RouterLink>
+          <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/assets">资产管理</RouterLink>
+          <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/billing">账单分析</RouterLink>
           <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/domains">域名管理</RouterLink>
           <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/tasks">任务中心</RouterLink>
         </nav>

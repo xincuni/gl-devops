@@ -44,7 +44,12 @@ LOCAL_APPS = [
     "apps.core",
     "apps.authentication",
     "apps.accounts",
+    "apps.assets",
+    "apps.billing",
+    "apps.cmdb",
     "apps.domain",
+    "apps.jumpserver",
+    "apps.portal",
     "apps.tasks",
     "apps.audit",
 ]

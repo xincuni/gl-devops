@@ -2,12 +2,23 @@ import { createRouter, createWebHistory } from "vue-router";
 import { useAuthStore } from "../stores/auth";
 
 import AppLayout from "../layouts/AppLayout.vue";
+import AssetsLayout from "../layouts/AssetsLayout.vue";
+import BillingLayout from "../layouts/BillingLayout.vue";
 import DomainsLayout from "../layouts/DomainsLayout.vue";
 import LoginPage from "../pages/auth/LoginPage.vue";
 import AccountsPage from "../pages/accounts/AccountsPage.vue";
+import InstanceDetailPage from "../pages/assets/InstanceDetailPage.vue";
+import InstancesPage from "../pages/assets/InstancesPage.vue";
+import AnalysisPage from "../pages/billing/AnalysisPage.vue";
+import OverviewPage from "../pages/billing/OverviewPage.vue";
+import AssetDetailPage from "../pages/cmdb/AssetDetailPage.vue";
+import AssetsPage from "../pages/cmdb/AssetsPage.vue";
 import RecordDetailPage from "../pages/domains/RecordDetailPage.vue";
 import ZonesPage from "../pages/domains/ZonesPage.vue";
 import RecordsPage from "../pages/domains/RecordsPage.vue";
+import RulesPage from "../pages/jumpserver/RulesPage.vue";
+import SyncLogsPage from "../pages/jumpserver/SyncLogsPage.vue";
+import PortalPage from "../pages/portal/PortalPage.vue";
 import TasksPage from "../pages/tasks/TasksPage.vue";
 
 const routes = [
@@ -17,8 +28,45 @@ const routes = [
     component: AppLayout,
     meta: { requiresAuth: true },
     children: [
-      { path: "", redirect: "/accounts" },
+      { path: "", redirect: "/portal" },
+      { path: "portal", component: PortalPage },
       { path: "accounts", component: AccountsPage },
+      {
+        path: "assets",
+        component: AssetsLayout,
+        children: [
+          { path: "", redirect: "/assets/instances" },
+          { path: "instances", component: InstancesPage },
+          { path: "instances/:id", component: InstanceDetailPage },
+        ],
+      },
+      {
+        path: "billing",
+        component: BillingLayout,
+        children: [
+          { path: "", redirect: "/billing/overview" },
+          { path: "overview", component: OverviewPage },
+          { path: "analysis", component: AnalysisPage },
+        ],
+      },
+      {
+        path: "cmdb",
+        component: AssetsLayout,
+        children: [
+          { path: "", redirect: "/cmdb/assets" },
+          { path: "assets", component: AssetsPage },
+          { path: "assets/:id", component: AssetDetailPage },
+        ],
+      },
+      {
+        path: "jumpserver",
+        component: AssetsLayout,
+        children: [
+          { path: "", redirect: "/jumpserver/rules" },
+          { path: "rules", component: RulesPage },
+          { path: "sync-logs", component: SyncLogsPage },
+        ],
+      },
       {
         path: "domains",
         component: DomainsLayout,
@@ -48,7 +96,7 @@ router.beforeEach(async (to) => {
   }
 
   if (to.meta.guestOnly && isAuthenticated) {
-    return "/accounts";
+    return "/portal";
   }
 
   return true;
