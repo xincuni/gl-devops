@@ -1,0 +1,5 @@
+<template>
+  <span class="font-medium text-slate-900">
+    <slot />
+  </span>
+</template>

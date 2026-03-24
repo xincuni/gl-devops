@@ -6,6 +6,7 @@ class TaskExecution(models.Model):
     class TaskType(models.TextChoices):
         MANUAL = "manual", "Manual"
         ACCOUNT_SYNC = "account_sync", "Account Sync"
+        DNS_SYNC = "dns_sync", "DNS Sync"
 
     class Status(models.TextChoices):
         PENDING = "pending", "Pending"

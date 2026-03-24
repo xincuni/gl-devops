@@ -24,6 +24,7 @@ async function handleLogout() {
         </div>
         <nav class="space-y-2">
           <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/accounts">云账号</RouterLink>
+          <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/domains">域名管理</RouterLink>
           <RouterLink class="block rounded px-3 py-2 hover:bg-white/10" to="/tasks">任务中心</RouterLink>
         </nav>
       </aside>

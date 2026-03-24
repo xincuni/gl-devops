@@ -44,6 +44,7 @@ LOCAL_APPS = [
     "apps.core",
     "apps.authentication",
     "apps.accounts",
+    "apps.domain",
     "apps.tasks",
     "apps.audit",
 ]
