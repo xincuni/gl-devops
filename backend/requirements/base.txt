@@ -5,5 +5,6 @@ django-cors-headers>=4.9,<5.0
 django-filter>=25.2,<26.0
 django-environ>=0.13,<0.14
 django-unfold>=0.86,<0.87
+django-celery-beat>=2.8,<2.9
 celery>=5.6,<5.7
 redis>=7.3,<7.4

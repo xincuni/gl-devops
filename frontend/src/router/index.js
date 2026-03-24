@@ -10,6 +10,7 @@ import AccountsPage from "../pages/accounts/AccountsPage.vue";
 import InstanceDetailPage from "../pages/assets/InstanceDetailPage.vue";
 import InstancesPage from "../pages/assets/InstancesPage.vue";
 import AnalysisPage from "../pages/billing/AnalysisPage.vue";
+import LineItemsPage from "../pages/billing/LineItemsPage.vue";
 import OverviewPage from "../pages/billing/OverviewPage.vue";
 import AssetDetailPage from "../pages/cmdb/AssetDetailPage.vue";
 import AssetsPage from "../pages/cmdb/AssetsPage.vue";
@@ -46,6 +47,7 @@ const routes = [
         children: [
           { path: "", redirect: "/billing/overview" },
           { path: "overview", component: OverviewPage },
+          { path: "line-items", component: LineItemsPage },
           { path: "analysis", component: AnalysisPage },
         ],
       },

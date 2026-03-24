@@ -30,6 +30,9 @@ const route = useRoute();
           <RouterLink to="/billing/overview">
             <Button :variant="route.path === '/billing/overview' ? 'default' : 'outline'">账单总览</Button>
           </RouterLink>
+          <RouterLink to="/billing/line-items">
+            <Button :variant="route.path === '/billing/line-items' ? 'default' : 'outline'">账单明细</Button>
+          </RouterLink>
           <RouterLink to="/billing/analysis">
             <Button :variant="route.path === '/billing/analysis' ? 'default' : 'outline'">费用分析</Button>
           </RouterLink>

@@ -112,7 +112,7 @@ onMounted(fetchData);
           </thead>
           <tbody>
             <tr v-if="loading" class="border-t border-slate-100"><td class="px-6 py-6 text-slate-500" colspan="3">加载中...</td></tr>
-            <tr v-for="item in logs" :key="item.id" class="border-t border-slate-100">
+            <tr v-for="item in logs.slice(0, 5)" :key="item.id" class="border-t border-slate-100">
               <td class="px-6 py-4 font-medium">{{ item.name }}</td>
               <td class="px-6 py-4 text-slate-600">{{ item.status }}</td>
               <td class="px-6 py-4 text-slate-600">{{ item.result?.line_items || 0 }} 条</td>
